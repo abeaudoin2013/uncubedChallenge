@@ -1,0 +1,11 @@
+<h1>Welcome @user. Here's what you gotta do today</h1>
+
+<p>Add to list? </p>
+<% form_for @list do |f| %>
+	<% f.text_field %>
+	<%= f.title_field %>
+<% end %> 
+
+<% @lists.each do |list| %>
+	<h3><%= list.title %></h3>
+<% end %>
