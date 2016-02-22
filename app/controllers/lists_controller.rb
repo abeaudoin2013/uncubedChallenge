@@ -1,7 +1,11 @@
 class ListsController < ApplicationController
   def index
-  	lists = List.all
-    @lists = lists.reverse
+
+    if current_user 
+    	@lists = current_user.lists.all.reverse
+    else
+      redirect_to signin_path
+    end
   end
 
   def create
@@ -26,23 +30,27 @@ class ListsController < ApplicationController
   end
 
 
-  def edit 
-
+  def edit
+    @list = List.find(params[:id])
   end
 
   def update
-
   end
 
   def destroy
     @list = List.find(params[:id])
     @list.destroy
 
+    respond_to do |format|
+      format.html { redirect_to root_path }
+      format.js   { render :layout => false }
+    end
+
   end
 
   private
 
   def list_params
-  	params.require(:list).permit(:title, :description, :progress).merge(user: current_user)
+  	params.require(:list).permit(:title).merge(user: current_user)
   end
 end

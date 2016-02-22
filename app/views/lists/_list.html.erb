@@ -1,18 +1,8 @@
-<div id="list-item">
+<div id="list-item" data-list-id="<%= list.id %>">
 
-	<h3><%= list.title %></h3>
-	<p><%= list.description %></p>
+	<h3 class="list-item-title"><%= list.title %></h3>
+	<p class="list-item-created-at"><%= list.created_at.strftime("%d %b. %Y") %></p>
 
-		<% if list.progress == 0 %>
-
-		  <p>In progress</p>
-
-		<% elsif list.progress == 1 %>
-
-		  <p>Completed</p>
-
-		<% end %>
-
-	<%= link_to "Delete", list_path(list.id), method: :delete, remote: true, class: "delete-item" %> 
+	<%= link_to "COMPLETED!", list_path(list.id), method: :delete, remote: true, class: "delete-item" %> 
 
 </div>

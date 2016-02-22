@@ -1,6 +1,6 @@
-<h1>Welcome @user. Here's what you gotta do today</h1>
-
 <% if current_user %>
+
+  <h1>Welcome <%= current_user.username %>. Here's what you gotta do today</h1>
 	
 	<p>Add to list?</p>
 
@@ -8,7 +8,9 @@
 
   <h3><%=current_user.username%>'s things to do:</h3>
 
-  <%= render @lists %>
+  <div class="list-item-container">
+  	<%= render @lists %>
+  </div>
 
 
 <% end %> 
