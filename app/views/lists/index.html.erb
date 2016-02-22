@@ -2,23 +2,13 @@
 
 <% if current_user %>
 	
-	<p>Add to list? </p>
+	<p>Add to list?</p>
 
-	<%= render 'new_list_form' %>
+	<%= render 'shared/list_form' %>
 
-	<% @lists.each do |list| %>
-		<h3><%= list.title %></h3>
-		<p><%= list.description %></p>
+  <h3><%=current_user.username%>'s things to do:</h3>
 
-		<% if list.progress == 0 %>
+  <%= render @lists %>
 
-		  <p>In progress</p>
 
-		<% elsif list.progress == 1 %>
-
-		  <p>Completed</p>
-
-		<% end %> 
-	<% end %>
-
-<% end %>
+<% end %> 

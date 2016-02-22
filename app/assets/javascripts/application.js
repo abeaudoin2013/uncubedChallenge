@@ -14,3 +14,17 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+$(document).on('page:change', function () {
+
+	$(".delete-item").on("ajax:complete", function(e){   
+		$(e.currentTarget).parent().fadeOut(300);
+		console.log('ajax worked');
+	});
+
+	$(".list-item-form").on("ajax:complete", function(e) {
+		console.log(e.currentTarget);
+	})
+
+});

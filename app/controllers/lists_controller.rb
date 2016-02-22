@@ -1,19 +1,30 @@
 class ListsController < ApplicationController
   def index
-  	@lists = List.all
-  	@list = List.new
+  	lists = List.all
+    @lists = lists.reverse
   end
 
   def create
     @list = List.create(list_params)
 
     if @list.save
-    	redirect_to '/'
+
+      respond_to do |format|
+        format.html {redirect_to root_path, notice: 'New item added!' }
+        format.js {flash.now[:notice] = "New List Item!"}
+      end
+
     else 
-    	redirect_to '/', notice: "Unable to save time card"
+
+      respond_to do |format|
+        format.html {redirect_to root_path, notice: "Something just ain't right"}
+        format.js {flash.now[:notice] = "There was a problem, homie"}
+      end
+
     end
 
   end
+
 
   def edit 
 
@@ -24,6 +35,8 @@ class ListsController < ApplicationController
   end
 
   def destroy
+    @list = List.find(params[:id])
+    @list.destroy
 
   end
 
