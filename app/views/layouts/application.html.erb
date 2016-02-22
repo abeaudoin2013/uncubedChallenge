@@ -7,8 +7,22 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+<header>
+	<nav>
+		<% if current_user %>
+			<span>Hello <%= current_user.username %></span>
+			<%= link_to 'sign out', signout_path, method: :delete %>
+		<% else %>
+			<%= link_to 'sign in', signin_path %>
+			<%= link_to 'sign up', new_user_path %>
+		<% end %>
+	</nav>
+</header>
+<main>
+	<% if flash[:notice] %>
+		<div class="notice"><%= flash[:notice].html_safe %></div>
+	<% end %>
+	<%= yield %>
+</main>
 </body>
 </html>

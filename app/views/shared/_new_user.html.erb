@@ -1,0 +1,33 @@
+<%= form_for @user do |f| %>
+	<% if @user.errors.any? %>
+		<div class="alert">
+			<% @user.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+			<% end %>
+		</div>
+	<% end %>
+	
+	<p>
+		<%= f.label :username, "Username" %>
+		<%= f.text_field :username, required: true, placeholder: "Username" %>
+	</p>
+	<p>
+		<%= f.label :email %>
+		<%= f.email_field :email, required: true, placeholder: "Email" %>
+	</p>
+	<p>
+		<%= f.label :password %>
+		<%= f.password_field :password, required: true, placeholder: "Password" %>
+	</p>
+	<p>
+		<%= f.label :password_confirmation %>
+		<%= f.password_field :password_confirmation, required: true, placeholder: "Password" %>
+	</p>
+	<p>
+		<%= f.label :about %>
+		<%= f.text_area :about %>
+	</p>
+	<p>
+		<%= f.submit %>
+	</p>
+<% end %>

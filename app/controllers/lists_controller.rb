@@ -6,12 +6,30 @@ class ListsController < ApplicationController
 
   def create
     @list = List.create(list_params)
-    redirect_to '/'
+
+    if @list.save
+    	redirect_to '/'
+    else 
+    	redirect_to '/', notice: "Unable to save time card"
+    end
+
+  end
+
+  def edit 
+
+  end
+
+  def update
+
+  end
+
+  def destroy
+
   end
 
   private
 
   def list_params
-  	params.require(:list).permit(:title, :description, :progress)
+  	params.require(:list).permit(:title, :description, :progress).merge(user: current_user)
   end
 end
