@@ -71,6 +71,10 @@ body {
 	  	width: 100%;
 	  	margin: 0 auto;
 
+	  	.list-item-crossOff {
+	  		display: inline;
+	  	}
+
 	  	div	{
 	  		margin-right: 10%;
 	  		border-bottom: 1px solid black;
@@ -83,6 +87,11 @@ body {
 	  			font-size: 10px;
 	  			display: inline-block;
 	  		}
+	  	}
+
+	  	a {
+	  		float: right;
+    		margin-top: 26px;
 	  	}
 
 	  }

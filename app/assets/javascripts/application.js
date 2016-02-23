@@ -16,12 +16,28 @@
 //= require_tree .
 
 
-// $(document).on('page:change', function () {
+$(document).on('page:change', function () {
 
-// 	$(".delete-item").on("ajax:complete", function(e){   
-// 		$(e.currentTarget).parent().fadeOut(300);
-// 	});
 
+	$('.list-item-crossOff :checkbox').click(function() {
+    
+    var $this = $(this);
+
+   	var todoTitle = $this.parent().siblings("h3");
+
+    if ($this.is(':checked')) {
+
+      todoTitle.css("text-decoration", "line-through");
+
+
+    } else {
+
+      todoTitle.css("text-decoration", "none");
+
+
+    }
+
+	});
 
 	
-// });
+});
