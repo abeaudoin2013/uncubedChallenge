@@ -1,8 +1,6 @@
 <% if current_user %>
 
   <h1>Welcome <%= current_user.username %>. Here's what you gotta do today</h1>
-	
-	<p>Add to list?</p>
 
 	<%= render 'shared/list_form' %>
 

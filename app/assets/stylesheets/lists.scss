@@ -1,3 +1,85 @@
 // Place all the styles related to the Lists controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "font-awesome";
+
+$font: Helvetica;
+$light-gray: #F2F2F2;
+$darkest-gray: #828A95;
+$dark-gray: #919DAB;
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+body {
+	font-family: $font;
+
+	nav {
+		width: 100%;
+		border-bottom: 1px solid black;
+		padding: 10px;
+	}
+
+	main {
+	  width: 60%;
+	  margin: 2% auto;
+	  padding: 25px;
+	  border-right: 1px solid $darkest-gray;
+	  border-left: 1px solid $darkest-gray;
+
+	  .list-form {
+	  	background-color: $light-gray;
+
+	  	form {
+
+	  		padding: 10px 0;
+	  		text-align: center;
+
+	  		input {
+	  			margin-top: 15px;
+	  			height: 5vh;
+	  			font-size: 16px;
+	  			width: 80%;
+
+	  		}
+	  		input:focus {
+	  			outline: none;
+	  		}
+
+	  		.list-form-submit {
+	  			width: 10%;
+	  			background-color: $dark-gray;
+	  			border-radius: 5px;
+	  		}
+
+	  	}
+
+	  }
+
+	  .list-item-container {
+	  	width: 100%;
+	  	margin: 0 auto;
+
+	  	div	{
+	  		margin-right: 10%;
+	  		border-bottom: 1px solid black;
+
+	  		h3 {
+	  			display: inline-block;
+	  		}
+
+	  		p {
+	  			font-size: 10px;
+	  			display: inline-block;
+	  		}
+	  	}
+
+	  }
+	}
+
+}
+
+	

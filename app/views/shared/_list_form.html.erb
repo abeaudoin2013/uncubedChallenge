@@ -1,13 +1,13 @@
-<div>
+<div class="list-form">
 	<%= form_for List.new, remote: true, class: "list-item-form" do |f| %>
 		
-		<p>
-			<%= f.label :title %>
-			<%= f.text_field :title, class: "list-item-title" %>
-		</p>
-		<p>
-			<%= f.submit %>
-		</p>
+
+		<%= f.label :title, "Be productive.", class: "list-item-title-label" %><br>
+		<%= f.text_field :title, class: "list-item-title-input" %>
+
+
+		<%= f.submit 'add to list', class: "list-form-submit" %>
+
 
 	<% end %> 
 

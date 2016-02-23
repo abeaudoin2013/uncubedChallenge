@@ -1,3 +1,4 @@
 $('.delete-item').bind('ajax:success', function() {  
-  $(this).closest('div').fadeOut(200);
+	$(this).siblings("h3").wrap("<strike>");
+  $(this).closest('div').fadeOut(700);
 });  
