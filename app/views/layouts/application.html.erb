@@ -11,10 +11,10 @@
 	<nav>
 		<% if current_user %>
 			<span>Hello <%= current_user.username %></span>
-			<%= link_to 'sign out', signout_path, method: :delete %>
+			<%= link_to 'sign out', signout_path, method: :delete, class: "signout" %>
 		<% else %>
-			<%= link_to 'sign in', signin_path %>
-			<%= link_to 'sign up', new_user_path %>
+			<%= link_to 'sign in', signin_path, class: "signin" %>
+			<%= link_to 'sign up', new_user_path, class: "signup" %>
 		<% end %>
 	</nav>
 </header>
