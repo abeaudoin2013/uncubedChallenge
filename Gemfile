@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 
@@ -25,6 +24,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem "font-awesome-rails"
 
+gem 'rails_12factor', group: :production
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -47,3 +48,4 @@ group :development do
   gem 'spring'
 end
 
+ruby '2.1.2'
