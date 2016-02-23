@@ -16,10 +16,10 @@
 //= require_tree .
 
 
-$(document).on('page:change', function () {
+var ready;
+ready = function() {
 
-
-	$('.list-item-crossOff :checkbox').click(function() {
+  $('.list-item-crossOff :checkbox').click(function() {
     
     var $this = $(this);
 
@@ -39,5 +39,7 @@ $(document).on('page:change', function () {
 
 	});
 
-	
-});
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);

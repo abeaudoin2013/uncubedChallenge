@@ -1,3 +1,21 @@
 $('.list-item-container').prepend("<%= j render @list %>");
 $('.list-item-title-input').val('');
-$('.list-item-progress').val('0');
+$('.list-item-crossOff :checkbox').click(function() {
+    
+  var $this = $(this);
+
+ 	var todoTitle = $this.parent().siblings("h3");
+
+  if ($this.is(':checked')) {
+
+    todoTitle.css("text-decoration", "line-through");
+
+
+  } else {
+
+    todoTitle.css("text-decoration", "none");
+
+
+  }
+
+});
