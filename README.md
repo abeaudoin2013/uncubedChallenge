@@ -1,2 +1,2 @@
 # uncubedChallenge
-An todo list for Uncubed! 
+An todo list for Uncubed!
